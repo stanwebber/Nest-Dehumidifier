@@ -4,13 +4,13 @@
 <h2>Dehumidifier is currently <%= @dehumidifier_state.on ? "on" : "off" %></h2>
 
 <h2>Inside Temperature</h2> 
-<p><%= number_with_precision @last_reading.temperature, :precision => 0 %>&deg;C</p>
+<p><%= number_with_precision @last_reading.temperature, :precision => 0 %>&deg;F</p>
 
 <h2>Inside Humidity</h2>
 <p><%= number_with_precision @last_reading.humidity, :precision => 0 %>%</p>
 
 <h2>Outside Temperature</h2>
-<p><%= number_with_precision @last_reading.outside_temperature, :precision => 0 %>&deg;C</p>
+<p><%= number_with_precision @last_reading.outside_temperature, :precision => 0 %>&deg;F</p>
 
 <h2>Outside Humidity</h2>
 <p><%= number_with_precision @last_reading.outside_humidity, :precision => 0 %>%</p>
@@ -36,14 +36,3 @@
 <% else %>
   <center><h2>Doesn't look like you have any readings yet!</h2></center>
 <% end %>
-
-<h2>FAQ's</h2>
-
-<h3>What is this?</h3>
-<p>In short, this is a webpage. For a longer answer I wrote a post about it which you can find <a href="https://medium.com/red-davis/automatically-controlling-a-dehumidifier-with-a-nest-7008fc5670e0">here</a>.</p>
-
-<h3>I want one!</h3>
-<p>You can have one too! The code is open sourced and I <a href="https://medium.com/red-davis/automatically-controlling-a-dehumidifier-with-a-nest-7008fc5670e0">wrote</a> about how to set it all up.</p>
-
-<h3>Who made this?</h3>
-<p><a href="http://red.to">I did</a>.</p>
