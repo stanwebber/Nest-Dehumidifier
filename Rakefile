@@ -12,7 +12,7 @@ task :collect_reading => :environment do
     DehumidifierState.delete_all
   end
   
-  nest = NestThermostat::Nest.new(email: ENV['NEST_EMAIL'], password: ENV['NEST_PASSWORD'], temperature_scale: :celsius)
+  nest = NestThermostat::Nest.new(email: ENV['NEST_EMAIL'], password: ENV['NEST_PASSWORD'], temperature_scale: :fahrenheit)
   temperature = nest.current_temp
   humidity = nest.humidity
   
