@@ -34,13 +34,11 @@ task :collect_reading => :environment do
       HTTParty.post(ENV['IFTTT_TURN_ON'])
       
       DehumidifierState.create(:on => true)
-    end
   else
       # Turn off dehumidifier
       HTTParty.post(ENV['IFTTT_TURN_OFF'])
       
       DehumidifierState.create(:on => false)
-    end
   end
 end
 
