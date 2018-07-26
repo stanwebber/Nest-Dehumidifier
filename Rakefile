@@ -20,7 +20,7 @@ task :collect_reading => :environment do
     configuration.api_key = ENV['FORECAST_IO']
   end
   
-  forecast = ForecastIO.forecast(ENV['LATITUDE'].to_f, ENV['LONGITUDE'].to_f, time: Time.now.to_i, params: {units: 'uk2'})
+  forecast = ForecastIO.forecast(ENV['LATITUDE'].to_f, ENV['LONGITUDE'].to_f, time: Time.now.to_i, params: {units: 'us'})
   outside_temperature = forecast.currently.temperature
   outside_humidity = forecast.currently.humidity * 100.0
   
