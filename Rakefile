@@ -31,13 +31,11 @@ task :collect_reading => :environment do
   
   if humidity > ENV['HUMIDITY_THRESHOLD'].to_i
     # Turn on dehumidifier
-    if last_dehumidifier_change.nil? || !last_dehumidifier_change.on
       HTTParty.post(ENV['IFTTT_TURN_ON'])
       
       DehumidifierState.create(:on => true)
     end
   else
-    if last_dehumidifier_change.nil? || last_dehumidifier_change.on
       # Turn off dehumidifier
       HTTParty.post(ENV['IFTTT_TURN_OFF'])
       
