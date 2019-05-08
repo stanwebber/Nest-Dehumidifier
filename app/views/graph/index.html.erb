@@ -1,19 +1,15 @@
 <% if @readings.any? %>
 
 <center>
-<h2>Dehumidifier is currently <%= @dehumidifier_state.on ? "on" : "off" %></h2>
+<h1>Dehumidifier is currently <%= @dehumidifier_state.on ? "on" : "off" %></h1>
 
-<h2>Inside Temperature</h2> 
-<p><%= number_with_precision @last_reading.temperature, :precision => 0 %>&deg;F</p>
+<h1>Inside Temperature <%= number_with_precision @last_reading.temperature, :precision => 0 %>&deg;F</h1>
 
-<h2>Inside Humidity</h2>
-<p><%= number_with_precision @last_reading.humidity, :precision => 0 %>%</p>
+<h1>Inside Humidity <%= number_with_precision @last_reading.humidity, :precision => 0 %>%</h1>
 
-<h2>Outside Temperature</h2>
-<p><%= number_with_precision @last_reading.outside_temperature, :precision => 0 %>&deg;F</p>
+<h1>Outside Temperature <%= number_with_precision @last_reading.outside_temperature, :precision => 0 %>&deg;F</h1>
 
-<h2>Outside Humidity</h2>
-<p><%= number_with_precision @last_reading.outside_humidity, :precision => 0 %>%</p>
+<h1>Outside Humidity <%= number_with_precision @last_reading.outside_humidity, :precision => 0 %>%</h1>
 
 </center>
   
